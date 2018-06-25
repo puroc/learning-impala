@@ -1,4 +1,4 @@
-package com.example.impala;
+package com.example.impala.csv;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
