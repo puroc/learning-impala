@@ -52,8 +52,9 @@ group by
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`);
 
-[加载数据]
-LOAD DATA INPATH '/user/hdfs/sample_data/csv/device' INTO TABLE device;
+[刷新数据]
+refresh device;
+refresh metrics;
 
 [问题]
 
