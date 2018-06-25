@@ -38,8 +38,6 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 LOCATION '/user/hdfs/sample_data/csv/metrics';
 
 [查询数据]
-select device.deviceId,reading,metrics.time as time from device,metrics where device.deviceId=metrics.deviceId limit 10;
-
 select
   T_3C75F1.`deviceId`,
   year(T_3C75F1.`time`),
@@ -51,6 +49,8 @@ group by
   T_3C75F1.`deviceId`,
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`);
+
+耗时：device表1000条，metrics表1亿条（3.7GB）执行上面的查询语句，耗时平均180秒，
 
 [刷新数据]
 refresh device;
