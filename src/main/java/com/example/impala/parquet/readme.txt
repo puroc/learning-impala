@@ -36,7 +36,7 @@ CREATE EXTERNAL TABLE metrics_parquet
   LOCATION '/user/hdfs/sample_data/parquet/metrics';
 
 [查询数据]
-select
+explain select
   T_3C75F1.`deviceId`,
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`),
@@ -60,7 +60,11 @@ group by
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`);
 
-耗时：device表1000条，metrics表1亿条（261M）执行上面的查询语句，耗时平均159秒，
+select device_parquet.deviceId as deviceId,year(time),month(time),count(1) from device_parquet,metrics_parquet
+where device_parquet.deviceId=metrics_parquet.deviceId
+group by device_parquet.deviceId,year(time),month(time)
+
+耗时：device表1000条，metrics表1亿条（261M）执行上面的查询语句，耗时平均165秒，
 
 [刷新数据]
 refresh device_parquet;
