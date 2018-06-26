@@ -29,16 +29,16 @@ public class ParquetDataMaker extends AbstractDataMaker {
     public static final String FILE_METRICS_PREFIX = "/Users/puroc/git/learning-impala/target/parquet/metrics/metrics";
     public static final String FILE_METRICS_SUFFIX = ".parq";
     public static final int DEVICE_TOTAL_NUM = 1000;
-    public static final int METRICS_TOTAL_NUM = 9000000;
+    public static final int METRICS_TOTAL_NUM = 50000;
     private static final List<String> dateList = new ArrayList<String>();
 
     {
-        dateList.add("2017-01-01 18:00:00");
-        dateList.add("2017-02-01 18:00:00");
-        dateList.add("2017-03-01 18:00:00");
-        dateList.add("2017-04-01 18:00:00");
-        dateList.add("2017-05-01 18:00:00");
-        dateList.add("2017-06-01 18:00:00");
+//        dateList.add("2017-01-01 18:00:00");
+//        dateList.add("2017-02-01 18:00:00");
+//        dateList.add("2017-03-01 18:00:00");
+//        dateList.add("2017-04-01 18:00:00");
+//        dateList.add("2017-05-01 18:00:00");
+//        dateList.add("2017-06-01 18:00:00");
 
         dateList.add("2018-07-01 18:00:00");
         dateList.add("2018-08-01 18:00:00");

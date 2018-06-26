@@ -22,6 +22,7 @@ CREATE EXTERNAL TABLE device_parquet
    deviceName STRING,
    orgId STRING
 )
+
   STORED AS PARQUET
   LOCATION '/user/hdfs/sample_data/parquet/device';
 
@@ -32,8 +33,18 @@ CREATE EXTERNAL TABLE metrics_parquet
    reading BIGINT,
    time STRING
 )
+  partitioned by (year string)
   STORED AS PARQUET
   LOCATION '/user/hdfs/sample_data/parquet/metrics';
+
+[添加表分区]
+alter table metrics_parquet add partition (year="2017");
+alter table metrics_parquet add partition (year="2018");
+
+[删除分区]？？？
+
+[查看表分区]
+show partitions metrics_parquet;
 
 [查询数据]
 explain select
