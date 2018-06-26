@@ -48,22 +48,6 @@ group by
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`);
 
-select
-  T_3C75F1.`deviceId`,
-  year(T_3C75F1.`time`),
-  month(T_3C75F1.`time`),
-  sum(T_3C75F1.`reading`),
-  count(1)
-from (select deviceId,reading,time from metrics_parquet) as `T_3C75F1`
-group by
-  T_3C75F1.`deviceId`,
-  year(T_3C75F1.`time`),
-  month(T_3C75F1.`time`);
-
-select device_parquet.deviceId as deviceId,year(time),month(time),count(1) from device_parquet,metrics_parquet
-where device_parquet.deviceId=metrics_parquet.deviceId
-group by device_parquet.deviceId,year(time),month(time)
-
 耗时：device表1000条，metrics表1亿条（261M）执行上面的查询语句，耗时平均165秒，
 
 [刷新数据]
