@@ -20,6 +20,9 @@ public abstract class AbstractDataMaker {
         if (folder.exists()) {
             File[] files = folder.listFiles();
             for (File file : files) {
+                if(file.isDirectory()){
+                    removeFolder(file.getPath());
+                }
                 if(file.exists()){
                     boolean result = file.delete();
                     System.out.println((result ? "文件删除成功" : "文件删除失败")+","+file.getName());

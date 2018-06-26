@@ -4,7 +4,7 @@ hdfs dfs -mkdir -p /user/hdfs/sample_data/csv/metrics
 
 [赋予权限]
 sudo -u hdfs hadoop fs -chown -R impala:supergroup /user/hdfs/sample_data
-sudo -u hdfs hadoop fs -chmod -R 777 /user/hdfs/sample_data
+// sudo -u hdfs hadoop fs -chmod -R 777 /user/hdfs/sample_data (不需要执行该语句)
 
 [删除目录]
 hdfs dfs -rm -r /user/hdfs/sample_data/csv
