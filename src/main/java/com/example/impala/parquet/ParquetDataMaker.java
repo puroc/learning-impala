@@ -28,8 +28,8 @@ public class ParquetDataMaker extends AbstractDataMaker {
     public static final String FILE_DEVICE = "/Users/puroc/git/learning-impala/target/parquet/device/device.parq";
     public static final String FILE_METRICS_PREFIX = "/Users/puroc/git/learning-impala/target/parquet/metrics/metrics";
     public static final String FILE_METRICS_SUFFIX = ".parq";
-    public static final int DEVICE_TOTAL_NUM = 1000;
-    public static final int METRICS_TOTAL_NUM = 50000;
+    public static final int DEVICE_TOTAL_NUM = 50;
+    public static final int METRICS_TOTAL_NUM = 9000000;
     private static final List<String> dateList = new ArrayList<String>();
 
     {
