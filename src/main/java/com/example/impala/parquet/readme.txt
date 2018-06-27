@@ -50,7 +50,7 @@ alter table metrics_parquet drop partition (year="2018");
 show partitions metrics_parquet;
 
 [不指定分区查询数据]
-explain select
+select
   T_3C75F1.`deviceId`,
   year(T_3C75F1.`time`),
   month(T_3C75F1.`time`),
